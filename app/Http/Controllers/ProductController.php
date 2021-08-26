@@ -75,8 +75,8 @@ class ProductController extends Controller{
      * @param  str  $name
      * @return \Illuminate\Http\Response
      */
-    public function search($id){
+    public function search($name){
 
-        return Product::destroy($id);
+        return Product::where('name', 'like', '%'.$name.'%')->get();
     }
 }
